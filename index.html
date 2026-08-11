@@ -175,8 +175,11 @@
 
         <div class="video-block" data-reveal>
           <div class="video-poster" data-video-container>
-            <img src="assets/images/chevres-chevrerie.webp" alt="Aperçu de la vidéo sur la fabrication des fromages" width="1400" height="980" loading="lazy">
-            <div class="video-overlay">
+            <video data-local-video playsinline preload="metadata" poster="assets/images/video-fabrication-poster.webp" aria-label="Vidéo de présentation de La Chèvrerie d'Là-Haut">
+              <source src="assets/video/fabrication-chevrerie.mp4" type="video/mp4">
+              Votre navigateur ne permet pas de lire cette vidéo.
+            </video>
+            <div class="video-overlay" data-video-overlay>
               <button class="play-button" type="button" data-load-video aria-label="Lire la vidéo de fabrication">
                 <span aria-hidden="true">▶</span>
               </button>
@@ -186,9 +189,8 @@
           <div class="video-copy">
             <p class="eyebrow">Dans les coulisses</p>
             <h3>Voir comment les fromages sont fabriqués.</h3>
-            <p>Une vidéo présente les gestes de fabrication et le quotidien de la chèvrerie. La lecture ouvre le lecteur Facebook.</p>
-            <a class="text-link" href="https://www.facebook.com/watch/?v=789081917559855" target="_blank" rel="noopener noreferrer">Voir directement sur Facebook <span aria-hidden="true">↗</span></a>
-            <small>L'activation de la vidéo peut déposer des cookies tiers Facebook.</small>
+            <p>Une vidéo présente l'élevage, les gestes de fabrication et le quotidien de la chèvrerie. Lancez-la directement ici, sans quitter le site.</p>
+            <small>La vidéo est hébergée directement sur ce site.</small>
           </div>
         </div>
       </div>

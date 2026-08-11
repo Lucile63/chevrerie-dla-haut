@@ -73,17 +73,18 @@
 
   const loadVideoButton = document.querySelector('[data-load-video]');
   const videoContainer = document.querySelector('[data-video-container]');
-  if (loadVideoButton && videoContainer) {
-    loadVideoButton.addEventListener('click', () => {
-      const facebookUrl = 'https://www.facebook.com/watch/?v=789081917559855';
-      const iframe = document.createElement('iframe');
-      iframe.title = 'Vidéo de fabrication des fromages de La Chèvrerie d\'Là-Haut';
-      iframe.loading = 'lazy';
-      iframe.allow = 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share';
-      iframe.allowFullscreen = true;
-      iframe.src = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(facebookUrl)}&show_text=false&width=900&autoplay=true`;
-      videoContainer.innerHTML = '';
-      videoContainer.appendChild(iframe);
+  const localVideo = document.querySelector('[data-local-video]');
+  const videoOverlay = document.querySelector('[data-video-overlay]');
+  if (loadVideoButton && videoContainer && localVideo) {
+    loadVideoButton.addEventListener('click', async () => {
+      videoContainer.classList.add('is-playing');
+      if (videoOverlay) videoOverlay.hidden = true;
+      localVideo.controls = true;
+      try {
+        await localVideo.play();
+      } catch (error) {
+        // Les contrôles natifs restent affichés si l'autoplay est bloqué par le navigateur.
+      }
     });
   }
 
